@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#Setup arguments
 psql_host=$1
 psql_port=$2
 db_name=$3
@@ -7,15 +8,16 @@ psql_user=$4
 psql_password=$5
 
 export PGPASSWORD=$psql_password 
-# Check # of args
+
+# validate arguments
 if [ "$#" -ne 5 ]; then
     echo "Illegal number of parameters"
     exit 1
 fi
 
+# parse usage info
 vmstat_mb=$(vmstat --unit M -t)
 hostname=$(hostname -f)
-
 memory_free=$(echo "$vmstat_mb" | tail -1 | awk -v col="4" '{print $col}')
 cpu_idle=$(echo "$vmstat_mb" | tail -1 | awk -v col="15" '{print $col}')
 cpu_kernel=$(echo "$vmstat_mb" | tail -1 | awk -v col="14" '{print $col}')

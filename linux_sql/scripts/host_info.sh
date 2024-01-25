@@ -1,17 +1,18 @@
 #!/bin/bash
-
+#Setup arguments
 psql_host=$1
 psql_port=$2
 db_name=$3
 psql_user=$4
 psql_password=$5
 
+#validate arguments
 if [ "$#" -ne 5 ]; then
     echo "Illegal number of parameters"
     exit 1
 fi
 
-# VARIABLES
+#parse hardware specifications
 vmstat_mb=$(vmstat --unit M -t)
 hostname=$(hostname -f)
 lscpu_out=`lscpu`
