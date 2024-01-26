@@ -41,6 +41,10 @@ bash crontab -e
 
 ## Architecture
 
+![Architecture](https://github.com/jarviscanada/jarvis_data_eng_IanStewart/assets/44770822/df0dc585-bcb9-46f8-9c54-7ade59de402a)
+
+Each Linux virtual machine will be connected through a network switch. Each one will then run the `psql_docker.sh` script to set up and start the docker container and then run the `ddl.sql` to create the necessary tables. Then each will run `host_info.sh` once and insert the output to a database on the primary node. Then `host_usage.sh` once every minute and insert data to the primary node where it can be queried from. 
+
 ## Database Modeling
 ### `host_info`
 
