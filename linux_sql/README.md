@@ -118,6 +118,6 @@ To ensure the DDL script executed correctly I ran the \d command in psql to conf
 Each feature was built and then individually tested then pushed to Github. Once the core components were complete they were tested together by running them in order to simulate real-world usage (psql_docker.sh -> ddl.sql -> host_info.sh -> host_usage.sh). Then a crontab schedule was implemented to run the host_usage script every minute. Finally the SQL tables were reviewed to ensure functionality.
 
 # Enhancements
--[ ] Automate full setup process so that users can set up the monitoring agent by running a single bash script.
--[ ] Alerts to catch issues based on user-specified thresholds (eg. disk usage, CPU usage, memory usage) so users can avoid possible downtime from insufficient resources (ex. running out of memory or disk space).
+- [ ] Automate full setup process so that users can set up the monitoring agent by running a single bash script.
+- [ ] Alerts to catch issues based on user-specified thresholds (eg. disk usage, CPU usage, memory usage) so users can avoid possible downtime from insufficient resources (ex. running out of memory or disk space).
 - [ ] Live data visualization so users can choose a window (10 minutes, 1 hour, 1 day, etc.) and pull up a chart that shows whichever stats they choose over that time.
