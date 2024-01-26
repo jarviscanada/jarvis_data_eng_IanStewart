@@ -13,7 +13,7 @@
 
 # Introduction
 
-This project can be used to set up a monitoring agent for a linux VM. It will allow users to quickly set up a PostgreSQL instance on an Alpine container using Docker, then using a bash terminal users can run simple commands to create the necessary database and tables to store virtual machine hardware stats in a host_info table and usage stats in a host_usage table by setting up a crontab job that will collect and then insert usage stats every minute. Users can then query the respective databases to get a quick high level view of their cluster to get an idea of the cluster?s capacity and performance.
+This project can be used to set up a monitoring agent for a linux VM. It will allow users to quickly set up a PostgreSQL instance on an Alpine container using Docker, then using a bash terminal users can run simple commands to create the necessary database and tables to store virtual machine hardware stats in a host_info table and usage stats in a host_usage table by setting up a crontab job that will collect and then insert usage stats every minute. Users can then query the respective databases to get a quick high level view of their cluster's capacity and performance in real time.
 
 # Quick Start
 ```
@@ -50,7 +50,7 @@ Each Linux virtual machine will be connected through a network switch. Each one 
 
 | Column     | Description                                                           |
 |------------|-----------------------------------------------------------------------|
-| id         | Primary key for the table. Starts at 1 and automatically incremements |
+| id         | Primary key for the table. Starts at 1 and automatically increments |
 | hostname   | Full name of the host                                                 |
 | cpu_number | Number of CPUs on the host                                            |
 | cpu_model  | Model of the CPU                                                      |
